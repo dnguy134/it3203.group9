@@ -3,7 +3,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #ffffff;
-    color: #000000;
+    color: #a9a9a9;
 }
 
 .container {
@@ -16,11 +16,11 @@ body {
 }
 
 h1, h2 {
-    color: #000000;
+    color: #a9a9a9;
 }
 
 .main-menu {
-    background-color: #000000;
+    background-color: #a9a9a9;
     padding: 12px 0;
 }
 
@@ -70,7 +70,7 @@ th, td {
 }
 
 th {
-    background-color: #000000;
+    background-color: #a9a9a9;
     color: #ffffff;
 }
 
