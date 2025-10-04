@@ -3,7 +3,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #ffffff;
-    color: #a9a9a9;
+    color: #808080;
 }
 
 .container {
@@ -16,11 +16,11 @@ body {
 }
 
 h1, h2 {
-    color: #a9a9a9;
+    color: #808080;
 }
 
 .main-menu {
-    background-color: #a9a9a9;
+    background-color: #8080;
     padding: 12px 0;
 }
 
