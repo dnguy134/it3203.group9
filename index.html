@@ -4,18 +4,103 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>History of Web Browsers - Homepage</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            color: #000000;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border: 1px solid #d2d2d7;
+            border-radius: 0;
+        }
+
+        h1, h2 {
+            color: #000000;
+        }
+
+        .main-menu {
+            background-color: #000000;
+            padding: 12px 0;
+        }
+
+        .main-menu ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .main-menu li {
+            margin: 0 15px;
+        }
+
+        .main-menu a {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px;
+            border-radius: 0;
+        }
+
+        .main-menu a:hover {
+            background-color: #333333;
+        }
+
+        .main-menu a.active {
+            background-color: #0071e3;
+        }
+
+        .center-img {
+            display: block;
+            margin: 20px auto;
+            border: 1px solid #d2d2d7;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th, td {
+            border: 1px solid #d2d2d7;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #000000;
+            color: #ffffff;
+        }
+
+        ul, ol {
+            margin: 15px 0;
+            padding-left: 30px;
+        }
+
+        section {
+            margin-bottom: 30px;
+        }
+    </style>
 </head>
 <body>
     <header>
         <nav class="main-menu">
             <ul>
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="early-browsers.html">Early Browsers</a></li>
-                <li><a href="browser-wars.html">Browser Wars</a></li>
-                <li><a href="key-concepts.html">Key Concepts</a></li>
-                <li><a href="references.html">References</a></li>
-                <li><a href="about.html">About</a></li>
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#early">Early Browsers</a></li>
+                <li><a href="#wars">Browser Wars</a></li>
+                <li><a href="#concepts">Key Concepts</a></li>
+                <li><a href="#refs">References</a></li>
+                <li><a href="#about">About</a></li>
             </ul>
         </nav>
     </header>
@@ -39,14 +124,14 @@
             <h2>Table of Contents</h2>
             <table>
                 <tr><th>Section</th><th>Description</th></tr>
-                <tr><td><a href="early-browsers.html">Early Browsers</a></td><td>Discover the origins of web browsers.</td></tr>
-                <tr><td><a href="browser-wars.html">Browser Wars</a></td><td>Learn about the competition that shaped browser development.</td></tr>
-                <tr><td><a href="key-concepts.html">Key Concepts</a></td><td>Understand essential concepts in browser history.</td></tr>
-                <tr><td><a href="references.html">References</a></td><td>Find resources for further reading.</td></tr>
-                <tr><td><a href="about.html">About</a></td><td>Learn about this project and its creator.</td></tr>
+                <tr><td><a href="#early">Early Browsers</a></td><td>Discover the origins of web browsers.</td></tr>
+                <tr><td><a href="#wars">Browser Wars</a></td><td>Learn about the competition that shaped browser development.</td></tr>
+                <tr><td><a href="#concepts">Key Concepts</a></td><td>Understand essential concepts in browser history.</td></tr>
+                <tr><td><a href="#refs">References</a></td><td>Find resources for further reading.</td></tr>
+                <tr><td><a href="#about">About</a></td><td>Learn about this project and its creator.</td></tr>
             </table>
         </section>
-        <img src="https://via.placeholder.com/300" alt="Web Browser Timeline Illustration" class="center-img">
+        <img src="https://via.placeholder.com/300?text=Web+Browser+Timeline" alt="Web Browser Timeline Illustration" class="center-img">
     </main>
 </body>
 </html>
