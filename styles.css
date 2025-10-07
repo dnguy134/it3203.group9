@@ -1,3 +1,4 @@
+/*styling for body*/
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -6,6 +7,7 @@ body {
     color: #383838;
 }
 
+/*style for container web page content*/
 .container {
     max-width: 800px;
     margin: 20px auto;
@@ -15,15 +17,18 @@ body {
     border-radius: 0;
 }
 
+/*styling for h1 and h2 heading in html dimgray*/
 h1, h2 {
     color: #696969;
 }
 
+/*main navigation top menu background in html dimgray*/
 .main-menu {
     background-color: #696969;
     padding: 12px 0;
 }
 
+/*styling for menu list*/
 .main-menu ul {
     display: flex;
     justify-content: center;
@@ -36,6 +41,7 @@ h1, h2 {
     margin: 0 15px;
 }
 
+/*styling for menu link*/
 .main-menu a {
     color: #ffffff;
     text-decoration: none;
@@ -43,10 +49,12 @@ h1, h2 {
     border-radius: 0;
 }
 
+/*menu tab hover effect*/
 .main-menu a:hover {
     background-color: #333333;
 }
 
+/*current menu tab in-use effect*/
 .main-menu a.active {
     background-color: #0071e3;
 }
@@ -57,23 +65,27 @@ h1, h2 {
     border: 1px solid #d2d2d7;
 }
 
+/*table layout*/
 table {
     width: 100%;
     border-collapse: collapse;
     margin: 20px 0;
 }
 
+/*table cells*/
 th, td {
     border: 1px solid #d2d2d7;
     padding: 10px;
     text-align: left;
 }
 
+/*table header in html darkgray with html white text*/
 th {
     background-color: #a9a9a9;
     color: #ffffff;
 }
 
+/*styling for list*/
 ul, ol {
     margin: 15px 0;
     padding-left: 30px;
