@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const passed = score >= 5;
     resultsDiv.className = `result ${passed ? 'pass' : 'fail'}`;
     resultsDiv.innerHTML = `
-      <h2>${passed ? 'Congratulations! You Passed!' : 'Keep Studying!'}</h2>
+      <h2>${passed ? 'Congratulations! You Passed!' : 'Review and study some more!'}</h2>
       <p class="score">Total Score: ${score} / ${total}</p>
       ${feedback.join("")}
     `;
