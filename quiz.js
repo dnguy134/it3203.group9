@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const resetBtn = document.getElementById("resetBtn");
   const submitBtn = document.querySelector(".submit-btn");
 
-  // === CORRECT ANSWERS ===
+  // CORRECT ANSWERS
   const correctAnswers = {
     q1: "mosaic",                    // Fill-in-the-blank
     q2: "b",                         // Tim Berners-Lee
@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
     q5: ["netscape", "ie"]           // First Browser War
   };
 
-  // === FORM SUBMISSION ===
+  // FORM SUBMISSION 
   form.addEventListener("submit", (e) => {
     e.preventDefault();
     let score = 0;
@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
       | Correct: <strong>Netscape Navigator, Internet Explorer</strong></p>
     `);
 
-    // === QUIZ RESULTS ===
+    // QUIZ RESULTS
     const passed = score >= 5;
     resultsDiv.className = `result ${passed ? 'pass' : 'fail'}`;
     resultsDiv.innerHTML = `
@@ -79,7 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
     resetBtn.style.display = "inline-block";
   });
 
-  // === RESET QUIZ ===
+  // RESET QUIZ
   resetBtn.addEventListener("click", () => {
     form.reset();
     resultsDiv.style.display = "none";
