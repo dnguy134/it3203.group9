@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const total = 6;
     let feedback = [];
 
-    // Q1: Fill-in-the-blank
+    // Q1: fill-in-the-blank
     const q1 = document.querySelector('input[name="q1"]').value.trim().toLowerCase();
     const q1Correct = q1 === correctAnswers.q1;
     if (q1Correct) score++;
@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
       </span> — You said: "<strong>${q1 || '(empty)'}</strong>" | Correct: <code>Mosaic</code></p>
     `);
 
-    // Q2–Q4: Radio buttons
+    // Q2–Q4: buttons
     ["q2", "q3", "q4"].forEach((q, i) => {
       const selected = document.querySelector(`input[name="${q}"]:checked`);
       const userAns = selected ? selected.value : null;
@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
       `);
     });
 
-    // Q5: Multi-select (2 points)
+    // Q5: multi-select (2 points)
     const q5Selected = Array.from(document.querySelectorAll('input[name="q5"]:checked'))
                             .map(cb => cb.value);
     const q5Correct = arraysEqual(q5Selected.sort(), correctAnswers.q5.sort());
@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
     resetBtn.style.display = "none";
   });
 
-  // Helper: Compare arrays
+  // Helper: compare arrays
   function arraysEqual(a, b) {
     return a.length === b.length && a.every((val, i) => val === b[i]);
   }
