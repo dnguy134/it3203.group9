@@ -42,14 +42,14 @@ h1, h2 {
 }
 
 .main-menu li {
-    margin: 0 15px;
+    margin: 0 var(--spacing-md);
 }
 
 /*styling for menu link*/
 .main-menu a {
     color: #ffffff;
     text-decoration: none;
-    padding: 10px;
+    padding: var(--spacing-sm);
     border-radius: 0;
 }
 
@@ -65,8 +65,10 @@ h1, h2 {
 
 .center-img {
     display: block;
-    margin: 20px auto;
+    margin: var(--spacing-md) auto;
     border: 1px solid #d2d2d7;
+    max-width: 100%;
+    height: auto;
 }
 
 /*table layout*/
