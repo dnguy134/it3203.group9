@@ -5,16 +5,20 @@ body {
     padding: 0;
     background-color: #ffffff;
     color: #383838;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 /*styling for container web page content*/
 .container {
     max-width: 800px;
     margin: 20px auto;
-    padding: 20px;
+    padding: 25px;
     background-color: #ffffff;
     border: 1px solid #d2d2d7;
-    border-radius: 0;
+    border-radius: 12px;
 }
 
 /*styling for h1 and h2 heading in html dimgray*/
@@ -87,6 +91,61 @@ th {
 
 /*styling for list*/
 ul, ol {
-    margin: 15px 0;
-    padding-left: 30px;
+    margin: 18px 0;
+    padding-left: 32px;
+}
+
+/*styling for footer*/
+footer {
+    text-align: center;
+    padding: 30px 20px;
+    color: #666;
+    font-size: 0.9rem;
+    border-top: 1px solid #d2d2d7;
+    margin-top: 50px;
+}
+
+/* mobile responsive design for 480px */
+@media (max-width: 480px) {
+    .container {
+        margin: 10px;
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.7rem; }
+
+    .main-menu a {
+        padding: 10px 14px;
+        font-size: 0.95rem;
+    }
+
+    table, th, td {
+        font-size: 0.85rem;
+        padding: 8px;
+    }
+}
+
+/* tablet responsive design for 481px to 768px */
+@media (min-width: 481px) and (max-width: 768px) {
+    .container {
+        margin: 20px 15px;
+        padding: 30px;
+    }
+
+    .main-menu ul {
+        gap: 12px;
+    }
+
+    .main-menu a {
+        padding: 12px 18px;
+    }
+}
+
+/* desktop responsive design for above 769px ) */
+@media (min-width: 769px) {
+    .container {
+        padding: 40px;
+    }
 }
