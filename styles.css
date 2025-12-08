@@ -14,7 +14,7 @@ body {
 /*styling for container web page content*/
 .container {
     max-width: 800px;
-    margin: 20px auto;
+    margin: 15px auto;
     padding: 25px;
     background-color: #ffffff;
     border: 1px solid #d2d2d7;
@@ -29,11 +29,17 @@ h1, h2 {
 /*main navigation top menu background in html dimgray*/
 .main-menu {
     background-color: #696969;
-    padding: 15px 0;
+    padding: 15px 20px;
     position: sticky;
     top: 0;
     z-index: 1000;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.nav-container {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
 }
 
 /*styling for menu list*/
@@ -67,6 +73,16 @@ h1, h2 {
 /*current menu tab in-use effect*/
 .main-menu a.active {
     background-color: #0071e3;
+}
+
+/* hamburger button for mobile*/
+.menu-toggle {
+    display: block;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.8rem;
+    cursor: pointer;
 }
 
 /*images*/
