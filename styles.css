@@ -94,13 +94,14 @@ h1, h2 {
 }
 
 /*images*/
-.center-img {
-    display: block;
+img, .center-img {
     max-width: 100%;
     height: auto;
     margin: 25px auto;
     border: 1px solid #d2d2d7;
-    border-radius: 8px;
+    border-radius: 10px;
+    display: block;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 figure {
