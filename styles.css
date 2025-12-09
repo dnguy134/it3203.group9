@@ -1,3 +1,4 @@
+/*reset and mobile first base style*/
 *,
 *::before,
 *::after {
@@ -27,6 +28,7 @@ body {
     background-color: #ffffff;
     border: 1px solid #d2d2d7;
     border-radius: 12px;
+    flex-grow: 1; /*container pushes footer down*/
 }
 
 /*styling for h1 and h2 heading in html dimgray*/
@@ -37,7 +39,7 @@ h1, h2 {
 /*main navigation top menu background in html dimgray*/
 .main-menu {
     background-color: #696969;
-    padding: 15px 20px;
+    padding: 15px var(--spacing-md);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -48,20 +50,39 @@ h1, h2 {
     max-width: 800px;
     margin: 0 auto;
     position: relative;
+    /*for mobile H1/toggle alignment*/
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+}
 }
 
-/*styling for menu list*/
+/*styling for menu list - mobile/tablet horizontal centered*/
 .main-menu ul {
     display: flex;
     justify-content: center;
     list-style: none;
     margin: 0;
-    padding: 0 10px;
-    gap: 8px;
+    padding: 0 var(--spacing-sm);
+    gap: var(--spacing-xs); /*using modern gap for spacing*/
+    /*hidden by default on mobile (to be shown by .show class via JS)*/
+    flex-direction: column;
+    position: absolute;
+    width: 100%;
+    top: 100%;
+    left: 0;
+    background: var(--color-dimgray);
+    display: none; 
+}
+
+/* Mobile visibility class controlled by JS */
+.main-menu ul.show {
+    display: flex;
 }
 
 .main-menu li {
-    margin: 0 var(--spacing-md);
+    margin: 0; 
+    text-align: center;
 }
 
 /*styling for menu link*/
@@ -91,6 +112,7 @@ h1, h2 {
     color: white;
     font-size: 1.8rem;
     cursor: pointer;
+    z-index: 1001;
 }
 
 /*images*/
@@ -133,6 +155,7 @@ th, td {
     border: 1px solid #d2d2d7;
     padding: 12px;
     text-align: left;
+    white-space: normal;
 }
 
 /*table header in html darkgray with html white text*/
@@ -157,47 +180,85 @@ footer {
     margin-top: 50px;
 }
 
-/* mobile responsive design for 480px */
+/*mobile responsive design for 480px and below*/
 @media (max-width: 480px) {
     .container {
-        margin: 10px;
-        padding: 20px;
-        border-radius: 10px;
+        margin: var(--spacing-sm);
+        padding: var(--spacing-md);
+        border-radius: var(--spacing-sm);
+    }
+    
+    /*menu styling to force vertical stacking*/
+    .main-menu ul {
+        flex-direction: column; 
+        position: static; /*flow beneath the header*/
+        gap: 0;
+    }
+    .main-menu a {
+        padding: 15px 0; /*large touch target*/
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        font-size: 1rem;
     }
 
     h1 { font-size: 2rem; }
     h2 { font-size: 1.7rem; }
 
-    .main-menu a {
-        padding: 10px 14px;
-        font-size: 0.95rem;
-    }
-
     table, th, td {
         font-size: 0.85rem;
-        padding: 8px;
+        padding: var(--spacing-xs);
     }
 }
 
-/* tablet responsive design for 481px to 768px */
+/*tablet responsive design for 481px to 768px*/
 @media (min-width: 481px) and (max-width: 768px) {
     .container {
-        margin: 20px 15px;
-        padding: 30px;
+        margin: var(--spacing-md) 15px;
+        padding: var(--spacing-lg);
     }
 
+    /*tablet menu styling*/
     .main-menu ul {
+        flex-direction: row;
+        display: flex !important; /*force display on tablet*/
+        position: static;
+        width: auto;
+        justify-content: center;
         gap: 12px;
     }
-
+    .menu-toggle {
+        display: none;
+    }
     .main-menu a {
         padding: 12px 18px;
     }
 }
 
-/* desktop responsive design for above 769px ) */
+/*desktop responsive design for above 769px*/
 @media (min-width: 769px) {
     .container {
         padding: 40px;
     }
-}
+
+    /*desktop menu styling: H1 on left, menu on right*/
+    .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .menu-toggle {
+        display: none;
+    }
+
+    .main-menu ul {
+        /*ensure it's horizontal and aligned to the right*/
+        display: flex !important; 
+        flex-direction: row;
+        position: static;
+        width: auto;
+        gap: var(--spacing-md);
+    }
+    
+    .main-menu a {
+        padding: 12px 22px;
+    }
