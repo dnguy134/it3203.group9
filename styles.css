@@ -10,8 +10,6 @@
 /*styling for body*/
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
     background-color: #f4f4f4;
     color: #383838;
     line-height: 1.6;
@@ -22,12 +20,11 @@ body {
 
 /*styling for container web page content*/
 .container {
-    max-width: 800px;
+    max-width: 900px;
     margin: 20px auto;
     padding: 20px;
     background-color: #ffffff;
     border: 1px solid #d2d2d7;
-    border-radius: 0; 
     flex-grow: 1;
 }
 
@@ -36,7 +33,6 @@ h1, h2 {
     color: #696969;
 }
 h1 { font-size: 1.8rem; 
-    margin: 0; 
     padding-left: 10px;
 }
     
@@ -52,7 +48,7 @@ h1 { font-size: 1.8rem;
     
 /*flex container for h1 + nav (logo on left, menu on right/center) */
 .nav-container {
-    max-width: 900px;
+    max-width: 1000px;
     margin: 0 auto;
     padding: 0 20px;
     display: flex;
@@ -72,23 +68,19 @@ h1 { font-size: 1.8rem;
     padding: 5px 10px;
 }
 
-/* styling for menu list - flex container for links */
+/* styling for menu nav list - flex container for links */
 .main-menu ul {
     display: flex; /* always display as flex to control link layout */
-    justify-content: center:
     list-style: none;
-    margin: 0;
-    padding: 0;
     gap: 15px;
 }
 
-/* styling for menu link */
+/* styling for menu nav link */
 .main-menu a {
     color: #ffffff;
     text-decoration: none;
     padding: 10px 15px;
-    border-radius: 0px;
-    transition: background-color 0.2s;
+    transition: background 0.2s;
 }
     
 /*menu tab hover effect*/
@@ -112,29 +104,19 @@ img, .center-img {
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-figure {
-    text-align: center;
-    margin: 2em 0;
-}
-
-figcaption {
-    margin-top: 10px;
-    font-style: italic;
-    color: #666;
-}
-
 /*table layout*/
 table {
     width: 100%;
     border-collapse: collapse;
     margin: 20px 0;
+    overflow-x: auto;
+    display: block;
 }
 
 /*table cells*/
 th, td {
     border: 1px solid #d2d2d7;
     padding: 10px;
-    text-align: left;
 }
 
 /*table header in html darkgray with html white text*/
@@ -157,12 +139,10 @@ footer {
     text-align: center;
     padding: 30px 20px;
     color: #666;
-    font-size: 0.9rem;
     border-top: 1px solid #d2d2d7;
-    margin-top: 50px;
 }
 
-/*responsive breakpoints <= 768px*/
+/*tablet responsive <= 768px*/
 @media (max-width: 768px) {
     /*show the hamburger toggle icon*/
     .menu-toggle {
@@ -178,6 +158,7 @@ footer {
         top: 100%;
         left: 0;
         background-color: #696969;
+        padding: 10px 0;
         box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     }
 
@@ -187,27 +168,47 @@ footer {
     }
 
     .main-menu li {
+        text-align: center;
         border-top: 1px solid rgba(255, 255, 255, 0.1);
     }
     
     .main-menu a {
         padding: 15px 20px; 
-        text-align: center;
+    }
+
+    /*container spacing*/
+    .container {
+        padding: 15px;
+        margin: 15px;
     }
 }
 
-/*small screens (480px) adjustments*/
+/*small screens responsive (480px) adjustments*/
 @media (max-width: 480px) {
+
+     /*smaller title*/
+    .nav-container h1 {
+        font-size: 1.4rem;
+    }
+
+    /*reduce container padding*/
     .container {
         margin: 10px;
-        padding: 15px;
+        padding: 12px;
     }
-    
-    .nav-container {
-        padding: 0 10px;
+
+    /*improve readability on small screens*/
+    body {
+        font-size: 1rem;
     }
-    
-    .nav-container h1 {
-        font-size: 1.5rem;
+
+    /*tables scroll more comfortably*/
+    table {
+        font-size: 0.9rem;
+    }
+
+    img {
+        margin: 15px auto;
     }
 }
+    
