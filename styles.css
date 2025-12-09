@@ -12,7 +12,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #ffffff;
+    background-color: #f4f4f4;
     color: #383838;
     line-height: 1.6;
     min-height: 100vh;
@@ -24,22 +24,22 @@ body {
 .container {
     max-width: 800px;
     margin: 20px auto;
-    padding: 25px;
+    padding: 20px;
     background-color: #ffffff;
     border: 1px solid #d2d2d7;
-    border-radius: 8px; 
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border-radius: 0; 
     flex-grow: 1;
 }
 
 /*styling for typography in html dimgray*/
 h1, h2 {
     color: #696969;
-    margin: 1.8em 0 0.8em;
 }
-h1 { font-size: 2.2rem; margin: 0; } /*reset H1 margin for nav bar use*/
-h2 { border-bottom: 2px solid #696969; padding-bottom: 5px;
-
+h1 { font-size: 1.8rem; 
+    margin: 0; 
+    padding-left: 10px;
+}
+    
 /*main navigation centered top menu background in html dimgray*/
 .main-menu {
     background-color: #696969;
@@ -47,6 +47,7 @@ h2 { border-bottom: 2px solid #696969; padding-bottom: 5px;
     position: sticky;
     top: 0;
     z-index: 100;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
     
 /*flex container for h1 + nav (logo on left, menu on right/center) */
@@ -59,15 +60,8 @@ h2 { border-bottom: 2px solid #696969; padding-bottom: 5px;
     justify-content: space-between; 
     align-items: center;
 }
-
-/*hide h1 on smaller screens*/
-@media (max-width: 768px) {
-    .nav-container h1 {
-        font-size: 1.8rem;
-    }
-}    
     
-/*hamburger button on mobile/tablet*/
+/*hamburger button on mobile/tablet, hidden on desktop*/
 .menu-toggle {
     display: none; /*hide by default, show in mobile media query*/
     background: none;
@@ -81,7 +75,7 @@ h2 { border-bottom: 2px solid #696969; padding-bottom: 5px;
 /* styling for menu list - flex container for links */
 .main-menu ul {
     display: flex; /* always display as flex to control link layout */
-    justify-content: flex-end; /* align links to the right */
+    justify-content: center:
     list-style: none;
     margin: 0;
     padding: 0;
@@ -92,10 +86,9 @@ h2 { border-bottom: 2px solid #696969; padding-bottom: 5px;
 .main-menu a {
     color: #ffffff;
     text-decoration: none;
-    padding: 12px 18px;
-    border-radius: 6px;
-    transition: background-color 0.3s;
-    display: block;
+    padding: 10px 15px;
+    border-radius: 0px;
+    transition: background-color 0.2s;
 }
     
 /*menu tab hover effect*/
@@ -112,7 +105,7 @@ h2 { border-bottom: 2px solid #696969; padding-bottom: 5px;
 img, .center-img {
     max-width: 100%;
     height: auto;
-    margin: 25px auto;
+    margin: 20px auto;
     border: 1px solid #d2d2d7;
     border-radius: 10px;
     display: block;
@@ -135,14 +128,12 @@ table {
     width: 100%;
     border-collapse: collapse;
     margin: 20px 0;
-    border-radius: 6px;
-    overflow: hidden;
 }
 
 /*table cells*/
 th, td {
     border: 1px solid #d2d2d7;
-    padding: 12px;
+    padding: 10px;
     text-align: left;
 }
 
@@ -157,8 +148,8 @@ tr:nth-child(even) {
 
 /*styling for list*/
 ul, ol {
-    margin: 18px 0;
-    padding-left: 32px;
+    margin: 15px 0;
+    padding-left: 30px;
 }
 
 /*styling for footer*/
@@ -179,7 +170,7 @@ footer {
     }
     
     /*hide the navigation list by default*/
-    .main-menu nav ul {
+    .main-menu ul {
         display: none;
         flex-direction: column; /* Stack links vertically when shown */
         width: 100%;
@@ -202,7 +193,6 @@ footer {
     .main-menu a {
         padding: 15px 20px; 
         text-align: center;
-        border-radius: 0;
     }
 }
 
