@@ -8,19 +8,29 @@
 </head>
 
 <body>
-    <header>
-        <!--horizontal menu/navigation bar-->
-        <nav class="main-menu">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="early-browsers.html">Early Browsers</a></li>
-                <li><a href="browser-wars.html" class="active">Browser Wars</a></li>
-                <li><a href="key-concepts.html">Key Concepts</a></li>
-                <li><a href="references.html">References</a></li>
-                <li><a href="quiz.html">Quiz</a></li>
-                <li><a href="about.html">About</a></li>
-            </ul>
-        </nav>
+    <!-- responsive header with hamburger menu -->
+    <header class="main-menu">
+        <div class="nav-container">
+            <h1>
+                <a href="index.html" style="color:white; text-decoration:none;">
+                    Browser Breakdown
+                </a>
+            </h1>
+            <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="main-nav-list">
+                <span></span><span></span><span></span>
+            </button>
+            <nav aria-label="Main Navigation">
+                <ul id="main-nav-list" class="menu-list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="early-browsers.html">Early Browsers</a></li>
+                    <li><a href="browser-wars.html" class="active">Browser Wars</a></li>
+                    <li><a href="key-concepts.html">Key Concepts</a></li>
+                    <li><a href="references.html">References</a></li>
+                    <li><a href="quiz.html">Quiz</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <!--information regarding browser wars-->
@@ -54,11 +64,33 @@
             <li><strong>2004-2010s:</strong> Second Browser War with the rise of Mozilla Firefox, Google Chrome, and others.</li>
         </ul>
         <img src="https://www.best-infographics.com/wp-content/uploads/2020/04/14/A-History-of-Web-Browsers-500x600.jpg">
-        
+    </main>
+    
         <!--footer-->
         <footer>
             <p id="footer"> <em>Note: Group 9 class project for IT 3203</em> <td><a href="https://ksuweb.github.io/IT3203/" target="_blank">KSU IT 3203 Course Site</a></td></p>
         </footer>
-    </main>
+
+        <!-- hamburger menu javascript -->
+        <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const btn = document.querySelector('.menu-toggle');
+            const menu = document.querySelector('#main-nav-list');
+
+            btn.addEventListener('click', () => {
+                const expanded = btn.getAttribute('aria-expanded') === 'true';
+                btn.setAttribute('aria-expanded', !expanded);
+                menu.classList.toggle('show');
+            });
+
+            // close menu when clicking a link
+            document.querySelectorAll('#main-nav-list a').forEach(link => {
+                link.addEventListener('click', () => {
+                    menu.classList.remove('show');
+                    btn.setAttribute('aria-expanded', 'false');
+                });
+            });
+        });
+        </script>
 </body>
 </html>
