@@ -53,7 +53,7 @@
         <p id="footer"> <em>Note: Group 9 class project for IT 3203</em> <td><a href="https://ksuweb.github.io/IT3203/" target="_blank">KSU IT 3203 Course Site</a></td></p>
     </footer>
 
-    <!-- hamburger menu ccript -->
+    <!-- hamburger menu script -->
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             const btn = document.querySelector('.menu-toggle');
@@ -63,7 +63,7 @@
                 btn.setAttribute('aria-expanded', !expanded);
                 menu.classList.toggle('show');
             });
-            // auto-close on link click 
+            // close menu when clicking a link
             document.querySelectorAll('#main-nav-list a').forEach(link => {
                 link.addEventListener('click', () => {
                     menu.classList.remove('show');
