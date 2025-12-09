@@ -6,40 +6,42 @@
     <title>Browser Breakdown - Homepage</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-    
+    
 <body>
     <header>
-        <!--horizontal menu/navigation bar-->
-        <nav class="main-menu">
-            <ul>
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="early-browsers.html">Early Browsers</a></li>
-                <li><a href="browser-wars.html">Browser Wars</a></li>
-                <li><a href="key-concepts.html">Key Concepts</a></li>
-                <li><a href="references.html">References</a></li>
-                <li><a href="quiz.html">Quiz</a></li>
-                <li><a href="about.html">About</a></li>
-            </ul>
-        </nav>
+        <div class="main-menu">
+            <div class="nav-container">
+                <h1>Browser Breakdown</h1>
+                
+                <nav aria-label="Primary Site Navigation">
+                    <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav-list">☰</button>
+                    
+                    <ul id="main-nav-list">
+                        <li><a href="index.html" class="active">Home</a></li>
+                        <li><a href="early-browsers.html">Early Browsers</a></li>
+                        <li><a href="browser-wars.html">Browser Wars</a></li>
+                        <li><a href="key-concepts.html">Key Concepts</a></li>
+                        <li><a href="references.html">References</a></li>
+                        <li><a href="quiz.html">Quiz</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
     </header>
 
-    <!--home page-->
     <main class="container">
-        <h1>Browser Breakdown</h1>
+        
         <section class="intro">
             <h2>Welcome</h2>
             <p>This webpage traces the evolution of web browsers from their inception to modern times. Explore the history, key developments, and technologies that shaped how we access the internet today.</p>
             <p>ദ്ദി(ᵔᗜᵔ)</p>
+            
             <h2>What is a Web Browser</h2>
-            <p>A web browser is a software application that presents the website requested by retrieving files from a web server, rendering and then displaying content from the World Wide Web. 
-                The contents retrieved can be HTML (hypertext markup language), CSS (cascading style sheets), and JavaScript from the web and then interpreted using a browser engine that renders
-                the visual pages and provides the user with an immersive layout on their screen to interact with and explore. </p>
-            <p>The web browser is one of the most important and essential elements for connecting people to the World Wide Web. It serves as principal link between people and the digital world. 
-                This digital ecosystem encompasses websites, applications, and services that have helped people connect, pastime or enrich their lives. From the humble beginnings as a text-based viewer to today’s intricate, 
-                eye-catching designs, the browser has undergone a momentous evolution and is one the most widely used softwares for computers.</p>
+            <p>A web browser is a software application that presents the website requested by retrieving files from a web server, rendering and then displaying content from the World Wide Web. The contents retrieved can be **HTML** (hypertext markup language), **CSS** (cascading style sheets), and **JavaScript** from the web and then interpreted using a **browser engine** that renders the visual pages and provides the user with an immersive layout on their screen to interact with and explore.  </p>
+            <p>The web browser is one of the most important and essential elements for connecting people to the World Wide Web. It serves as the principal link between people and the digital world. This digital ecosystem encompasses websites, applications, and services that have helped people connect, pass the time, or enrich their lives. From the humble beginnings as a text-based viewer to today’s intricate, eye-catching designs, the browser has undergone a momentous evolution and is one of the most widely used softwares for computers.</p>
         </section>
         
-        <!--list of key terms-->
         <section class="key-terms">
             <h2>Key Terms</h2>
             <ul>
@@ -48,39 +50,52 @@
                 <li>Rendering Engine</li>
                 <li>HTML</li>
                 <li>CSS</li>
+                <li>JavaScript</li>
             </ul>
         </section>
 
-        <!--content directory-->
         <section class="toc">
             <h2>Table of Contents</h2>
-            <table>
-                <tr><th>Section</th><th>Description</th></tr>
-                <tr><td><a href="early-browsers.html">Early Browsers</a></td><td>Discover the origins of web browsers.</td></tr>
-                <tr><td><a href="browser-wars.html">Browser Wars</a></td><td>Learn about the competition that shaped browser development.</td></tr>
-                <tr><td><a href="key-concepts.html">Key Concepts</a></td><td>Understand essential concepts in browser history.</td></tr>
-                <tr><td><a href="references.html">References</a></td><td>Find resources for further reading and in-depth knowledge.</td></tr>
-                <tr><td><a href="about.html">About</a></td><td>Learn about this project and the developers behind it.</td></tr>
-            </table>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr><th>Section</th><th>Description</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><a href="early-browsers.html">Early Browsers</a></td><td>Discover the origins of web browsers.</td></tr>
+                        <tr><td><a href="browser-wars.html">Browser Wars</a></td><td>Learn about the competition that shaped browser development.</td></tr>
+                        <tr><td><a href="key-concepts.html">Key Concepts</a></td><td>Understand essential concepts in browser history.</td></tr>
+                        <tr><td><a href="references.html">References</a></td><td>Find resources for further reading and in-depth knowledge.</td></tr>
+                        <tr><td><a href="about.html">About</a></td><td>Learn about this project and the developers behind it.</td></tr>
+                    </tbody>
+                </table>
+            </div>
         </section>
+    </main>
 
-        <!--footer-->
-        <footer>
-            <p id="footer"> <em>Note: Group 9 class project for IT 3203</em> <td><a href="https://ksuweb.github.io/IT3203/" target="_blank">KSU IT 3203 Course Site</a></td></p>
-        </footer>
+    <footer>
+        <p> 
+            <em>Note: Group 9 class project for IT 3203</em> 
+            <span aria-hidden="true">|</span>
+            <a href="https://ksuweb.github.io/IT3203/" target="_blank" rel="noopener noreferrer">KSU IT 3203 Course Site</a>
+        </p>
+    </footer>
 
-         <!--mobile friendly menu-->
-        <script>
+    <script>
         const navButton = document.querySelector('.menu-toggle');
         const navList = document.querySelector('#main-nav-list');
-        navButton.addEventListener('click', () => {
-            // toggle which controls visibility in CSS
-            navList.classList.toggle('show');
-            // toggle for accessibility
-            const isExpanded = navButton.getAttribute('aria-expanded') === 'true' || false;
-            navButton.setAttribute('aria-expanded', !isExpanded);
-        });
+        
+        // Ensure elements exist before adding listeners
+        if (navButton && navList) {
+            navButton.addEventListener('click', () => {
+                // toggle which controls visibility in CSS
+                navList.classList.toggle('show');
+                
+                // toggle for accessibility
+                const isExpanded = navButton.getAttribute('aria-expanded') === 'true';
+                navButton.setAttribute('aria-expanded', !isExpanded);
+            });
+        }
     </script>
-    </main>
 </body>
 </html>
