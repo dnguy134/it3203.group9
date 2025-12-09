@@ -5,12 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Browser Breakdown - Early Browsers</title>
     <link rel="stylesheet" href="styles.css">
+    
+    <!--script for mobile hamburger menu-->
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const toggle = document.querySelector('.menu-toggle');
+        const menu = document.querySelector('.main-menu ul');
+        if (toggle && menu) {
+            toggle.addEventListener('click', () => {
+                menu.classList.toggle('show');
+            });
+        }
+    });
+    </script>
 </head>
 
 <body>
-    <header>
-        <!--horizontal menu/navigation bar-->
-        <nav class="main-menu">
+    <!--horizontal menu/navigation bar-->
+    <nav class="main-menu">
+        <div class="nav-container">
+            <!--hamburger button for mobile-->
+            <button class="menu-toggle" aria-label="Open menu">Menu</button>
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="early-browsers.html" class="active">Early Browsers</a></li>
@@ -20,8 +35,8 @@
                 <li><a href="quiz.html">Quiz</a></li>
                 <li><a href="about.html">About</a></li>
             </ul>
-        </nav>
-    </header>
+        </div>
+    </nav>
 
     <!--information regarding early browsers-->
     <main class="container">
