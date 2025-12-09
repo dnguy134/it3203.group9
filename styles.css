@@ -23,60 +23,77 @@ body {
 /*styling for container web page content*/
 .container {
     max-width: 800px;
-    margin: 15px auto;
+    margin: 20px auto;
     padding: 25px;
     background-color: #ffffff;
     border: 1px solid #d2d2d7;
     border-radius: 12px;
-    flex-grow: 1; /*container pushes footer down*/
+    box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+    flex: 1; /*container pushes footer down*/
 }
 
-/*styling for h1 and h2 heading in html dimgray*/
+/*styling for typography in html dimgray*/
 h1, h2 {
     color: #696969;
+    margin: 1.8em 0 0.8em;
+}
+h1 { font-size: 2.5rem; text-align: center; margin: 15px 0 35px; }
+h2 { font-size: 2rem; border-bottom: 3px solid #696969; padding-bottom: 10px; margin: 40px 0 20px; }
+h3 { font-size: 1.6rem; margin: 30px 0 15px; }
 }
 
-/*main navigation top menu background in html dimgray*/
+/*main navigation centered top menu background in html dimgray*/
 .main-menu {
     background-color: #696969;
-    padding: 15px var(--spacing-md);
+    padding: 15px 20px;
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 3px 15px rgba(0,0,0,0.15);
 }
 
 .nav-container {
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
-    position: relative;
-    /*for mobile H1/toggle alignment*/
-    display: flex; 
-    justify-content: space-between;
+    display: flex;
+    justify-content: space-between;   /* hamburger left, menu centered */
     align-items: center;
 }
-}
 
-/*styling for menu list - mobile/tablet horizontal centered*/
-.main-menu ul {
+/*hamburger button on mobile/tablet*/
+.menu-toggle {
     display: flex;
-    justify-content: center;
-    list-style: none;
-    margin: 0;
-    padding: 0 var(--spacing-sm);
-    gap: var(--spacing-xs); /*using modern gap for spacing*/
-    /*hidden by default on mobile (to be shown by .show class via JS)*/
     flex-direction: column;
-    position: absolute;
-    width: 100%;
-    top: 100%;
-    left: 0;
-    background: var(--color-dimgray);
-    display: none; 
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px 4px;
+    gap: 5px;
 }
 
-/* Mobile visibility class controlled by JS */
-.main-menu ul.show {
+.menu-toggle span {
+    width: 28px;
+    height: 3px;
+    background: white;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+/*menu list centered dropdown on mobile*/
+.menu-list {
+    list-style: none;
+    display: none;
+    flex-direction: column;
+    background: #696969;
+    border-radius: 12px;
+    overflow: hidden;
+    margin: 15px auto 0;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+.menu-list.show {
     display: flex;
 }
 
@@ -104,15 +121,35 @@ h1, h2 {
     background-color: #0071e3;
 }
 
-/* hamburger button for mobile*/
-.menu-toggle {
-    display: block;
-    background: none;
-    border: none;
-    color: white;
-    font-size: 1.8rem;
-    cursor: pointer;
-    z-index: 1001;
+/*centered horizontal menu for desktop*/
+@media (min-width: 769px) {
+    .menu-toggle {
+        display: none;
+    }
+
+    .nav-container {
+        justify-content: center;   /*true centering on desktop */
+    }
+
+    .menu-list {
+        display: flex !important;
+        flex-direction: row;
+        background: transparent;
+        margin: 0;
+        box-shadow: none;
+        gap: 16px;
+    }
+
+    .menu-list a {
+        padding: 12px 26px;
+        border-radius: 10px;
+        font-size: 1.05rem;
+    }
+
+    .menu-list a:hover,
+    .menu-list a.active {
+        background-color: #0071e3;
+    }
 }
 
 /*images*/
@@ -180,85 +217,14 @@ footer {
     margin-top: 50px;
 }
 
-/*mobile responsive design for 480px and below*/
+/*responsive breakpoints*/
 @media (max-width: 480px) {
-    .container {
-        margin: var(--spacing-sm);
-        padding: var(--spacing-md);
-        border-radius: var(--spacing-sm);
-    }
-    
-    /*menu styling to force vertical stacking*/
-    .main-menu ul {
-        flex-direction: column; 
-        position: static; /*flow beneath the header*/
-        gap: 0;
-    }
-    .main-menu a {
-        padding: 15px 0; /*large touch target*/
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        font-size: 1rem;
-    }
-
+    .container { margin: 10px; padding: 18px; }
     h1 { font-size: 2rem; }
     h2 { font-size: 1.7rem; }
-
-    table, th, td {
-        font-size: 0.85rem;
-        padding: var(--spacing-xs);
-    }
+    .submit-btn, #resetBtn { width: 100%; margin: 12px 0; }
 }
 
-/*tablet responsive design for 481px to 768px*/
 @media (min-width: 481px) and (max-width: 768px) {
-    .container {
-        margin: var(--spacing-md) 15px;
-        padding: var(--spacing-lg);
-    }
-
-    /*tablet menu styling*/
-    .main-menu ul {
-        flex-direction: row;
-        display: flex !important; /*force display on tablet*/
-        position: static;
-        width: auto;
-        justify-content: center;
-        gap: 12px;
-    }
-    .menu-toggle {
-        display: none;
-    }
-    .main-menu a {
-        padding: 12px 18px;
-    }
+    .container { margin: 20px 15px; padding: 30px; }
 }
-
-/*desktop responsive design for above 769px*/
-@media (min-width: 769px) {
-    .container {
-        padding: 40px;
-    }
-
-    /*desktop menu styling: H1 on left, menu on right*/
-    .nav-container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-    
-    .menu-toggle {
-        display: none;
-    }
-
-    .main-menu ul {
-        /*ensure it's horizontal and aligned to the right*/
-        display: flex !important; 
-        flex-direction: row;
-        position: static;
-        width: auto;
-        gap: var(--spacing-md);
-    }
-    
-    .main-menu a {
-        padding: 12px 22px;
-    }
