@@ -11,14 +11,12 @@
      <!-- responsive hamburger navigation -->
     <header class="main-menu">
         <div class="nav-container">
-            
             <!-- title -->
             <h1>
                 <a href="index.html" style="color:white; text-decoration:none;">
                     Browser Breakdown
                 </a>
             </h1>
-
             <!-- hamburger button for monile-->
             <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="main-nav-list">
                 <!-- bars for styling -->
@@ -26,7 +24,6 @@
                 <span></span>
                 <span></span>
             </button>
-
             <!-- main navigation -->
             <nav aria-label="Primary navigation">
                 <ul id="main-nav-list" class="menu-list">
@@ -39,7 +36,6 @@
                     <li><a href="about.html">About</a></li>
                 </ul>
             </nav>
-
         </div>
     </header>
 
@@ -74,13 +70,11 @@
             document.addEventListener("DOMContentLoaded", () => {
                 const btn = document.querySelector('.menu-toggle');
                 const menu = document.querySelector('#main-nav-list');
-
                 btn.addEventListener('click', () => {
                     const expanded = btn.getAttribute('aria-expanded') === 'true';
                     btn.setAttribute('aria-expanded', !expanded);
                     menu.classList.toggle('show');
             });
-
             // close menu when clicking a link
             document.querySelectorAll('#main-nav-list a').forEach(link => {
                 link.addEventListener('click', () => {
