@@ -8,24 +8,43 @@
 </head>
 
 <body>
-    <header>
-        <!--horizontal menu/navigation bar-->
-        <nav class="main-menu">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="early-browsers.html">Early Browsers</a></li>
-                <li><a href="browser-wars.html">Browser Wars</a></li>
-                <li><a href="key-concepts.html">Key Concepts</a></li>
-                <li><a href="references.html">References</a></li>
-                <li><a href="quiz.html">Quiz</a></li>
-                <li><a href="about.html" class="active">About</a></li>
-            </ul>
-        </nav>
+     <!-- responsive hamburger navigation -->
+    <header class="main-menu">
+        <div class="nav-container">
+            
+            <!-- title -->
+            <h1>
+                <a href="index.html" style="color:white; text-decoration:none;">
+                    Browser Breakdown
+                </a>
+            </h1>
+
+            <!-- hamburger button for monile-->
+            <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="main-nav-list">
+                <!-- bars for styling -->
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <!-- main navigation -->
+            <nav aria-label="Primary navigation">
+                <ul id="main-nav-list" class="menu-list">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="early-browsers.html">Early Browsers</a></li>
+                    <li><a href="browser-wars.html">Browser Wars</a></li>
+                    <li><a href="key-concepts.html">Key Concepts</a></li>
+                    <li><a href="references.html">References</a></li>
+                    <li><a href="quiz.html">Quiz</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </nav>
+
+        </div>
     </header>
 
     <!--information regarding website and developers behind project-->
     <main class="container">
-        <h1>Browser Breakdown</h1>
         <h2>The Developers</h2>
             <ul>
                 <li>About Denny</li>
@@ -43,11 +62,34 @@
         <h2>About This Project</h2>
         <p>This website aims to provide a concise history of web browsers, highlighting key milestones and concepts to educate viewers about browser evolution, technology and impact.</p>
         <img src="https://miro.medium.com/v2/1*Yo95EdwUW919vs2lte-5Uw.jpeg" width="650" height="400">
+        </main>
 
         <!--footer-->
         <footer>
             <p id="footer"> <em>Note: Group 9 class project for IT 3203</em> <td><a href="https://ksuweb.github.io/IT3203/" target="_blank">KSU IT 3203 Course Site</a></td></p>
         </footer>   
-    </main>
+
+         <!-- hamburger menu javascript -->
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                const btn = document.querySelector('.menu-toggle');
+                const menu = document.querySelector('#main-nav-list');
+
+                btn.addEventListener('click', () => {
+                    const expanded = btn.getAttribute('aria-expanded') === 'true';
+                    btn.setAttribute('aria-expanded', !expanded);
+                    menu.classList.toggle('show');
+            });
+
+            // close menu when clicking a link
+            document.querySelectorAll('#main-nav-list a').forEach(link => {
+                link.addEventListener('click', () => {
+                    menu.classList.remove('show');
+                    btn.setAttribute('aria-expanded', 'false');
+                });
+            });
+        });
+    </script>
+    
 </body>
 </html>
