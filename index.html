@@ -5,19 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Browser Breakdown - Homepage</title>
     <link rel="stylesheet" href="styles.css">
+</head>
 
 <body>
     <header class="main-menu">
         <div class="nav-container">
-            <!--title centered on all devices-->
-            <h1><a href="index.html" style="color:white; text-decoration:none;">Browser Breakdown</a></h1>
+            
+            <!-- title -->
+            <h1>
+                <a href="index.html" style="color:white; text-decoration:none;">
+                    Browser Breakdown
+                </a>
+            </h1>
 
-            <!--hamburger button visible on mobile/tablet-->
+            <!-- hamburger button -->
             <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="main-nav-list">
-                <span></span><span></span><span></span>
+                <!-- bars for styling -->
+                <span></span>
+                <span></span>
+                <span></span>
             </button>
 
-            <!--navigation menu-->
+            <!-- navigation -->
             <nav aria-label="Primary navigation">
                 <ul id="main-nav-list" class="menu-list">
                     <li><a href="index.html" class="active">Home</a></li>
@@ -29,20 +38,23 @@
                     <li><a href="about.html">About</a></li>
                 </ul>
             </nav>
+
         </div>
     </header>
 
     <main class="container">
+
         <section class="intro">
             <h2>Welcome!</h2>
             <p>This website traces the evolution of web browsers from their humble beginnings to the powerful tools we use today. 
-                Explore the history, fierce competition, and groundbreaking technologies that shaped how we experience the internet.</p>
+               Explore the history, fierce competition, and groundbreaking technologies that shaped how we experience the internet.</p>
+
             <h2>What is a Web Browser?</h2>
             <p>A <strong>web browser</strong> is a software application that retrieves, renders, and displays content from the World Wide Web. 
-                It interprets <strong>HTML</strong>, <strong>CSS</strong>, and <strong>JavaScript</strong> using a built-in <em>rendering engine</em> 
-                to create the interactive, visually rich pages we see on screen.</p>
+               It interprets <strong>HTML</strong>, <strong>CSS</strong>, and <strong>JavaScript</strong> using a built-in <em>rendering engine</em> 
+               to create the interactive, visually rich pages we see on screen.</p>
             <p>From simple text viewers in the early 1990s to today’s fast, secure, feature-packed browsers, 
-                this essential tool remains the primary gateway between users and the entire digital world.</p>
+               this essential tool remains the primary gateway between users and the entire digital world.</p>
         </section>
 
         <section class="key-terms">
@@ -77,18 +89,23 @@
                 </table>
             </div>
         </section>
+
     </main>
 
     <footer>
         <p>
             <em>Note: Group 9 class project for IT 3203</em>
             <span aria-hidden="true"> | </span>
-            <a href="https://ksuweb.github.io/IT3203/" target="_blank" rel="noopener">KSU IT 3203 Course Site</a>
+            <a href="https://ksuweb.github.io/IT3203/" target="_blank" rel="noopener">
+                KSU IT 3203 Course Site
+            </a>
         </p>
     </footer>
 
+    <!-- hamburger menu javascript -->
     <script>
         document.addEventListener("DOMContentLoaded", () => {
+
             const btn = document.querySelector('.menu-toggle');
             const menu = document.querySelector('#main-nav-list');
 
@@ -99,7 +116,7 @@
                     menu.classList.toggle('show');
                 });
 
-                // Close menu when clicking a link (great UX on mobile)
+                // close menu when clicking a link
                 document.querySelectorAll('#main-nav-list a').forEach(link => {
                     link.addEventListener('click', () => {
                         menu.classList.remove('show');
@@ -107,7 +124,9 @@
                     });
                 });
             }
+
         });
     </script>
+
 </body>
 </html>
