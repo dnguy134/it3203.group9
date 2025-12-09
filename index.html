@@ -6,31 +6,6 @@
     <title>Browser Breakdown - Homepage</title>
     <link rel="stylesheet" href="styles.css">
 
-    <!-- Hamburger Menu Script (works perfectly with our CSS) -->
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const btn = document.querySelector('.menu-toggle');
-            const menu = document.querySelector('#main-nav-list');
-
-            if (btn && menu) {
-                btn.addEventListener('click', () => {
-                    const expanded = btn.getAttribute('aria-expanded') === 'true';
-                    btn.setAttribute('aria-expanded', !expanded);
-                    menu.classList.toggle('show');
-                });
-
-                // Close menu when clicking a link (great UX on mobile)
-                document.querySelectorAll('#main-nav-list a').forEach(link => {
-                    link.addEventListener('click', () => {
-                        menu.classList.remove('show');
-                        btn.setAttribute('aria-expanded', 'false');
-                    });
-                });
-            }
-        });
-    </script>
-</head>
-
 <body>
     <header class="main-menu">
         <div class="nav-container">
@@ -111,5 +86,28 @@
             <a href="https://ksuweb.github.io/IT3203/" target="_blank" rel="noopener">KSU IT 3203 Course Site</a>
         </p>
     </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const btn = document.querySelector('.menu-toggle');
+            const menu = document.querySelector('#main-nav-list');
+
+            if (btn && menu) {
+                btn.addEventListener('click', () => {
+                    const expanded = btn.getAttribute('aria-expanded') === 'true';
+                    btn.setAttribute('aria-expanded', !expanded);
+                    menu.classList.toggle('show');
+                });
+
+                // Close menu when clicking a link (great UX on mobile)
+                document.querySelectorAll('#main-nav-list a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        menu.classList.remove('show');
+                        btn.setAttribute('aria-expanded', 'false');
+                    });
+                });
+            }
+        });
+    </script>
 </body>
 </html>
